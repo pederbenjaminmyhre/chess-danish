@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <table width="100%" id="chessboard">
+        <colgroup>
+            <col style="width: 25%">
+            <col style="width: 50%">
+            <col style="width: 25%">
+        </colgroup>
+        <tr>
+            <td class="chess-square" id="whitePiecesTaken"></td>
+            <td>
+                <table width="800px" style="margin: auto;">
+                    <tr  height="30px">
+                        <td height="30px"></td>
+                        <td height="30px" style="text-align: center">A</td>
+                        <td height="30px" style="text-align: center">B</td>
+                        <td height="30px" style="text-align: center">C</td>
+                        <td height="30px" style="text-align: center">D</td>
+                        <td height="30px" style="text-align: center">E</td>
+                        <td height="30px" style="text-align: center">F</td>
+                        <td height="30px" style="text-align: center">G</td>
+                        <td height="30px" style="text-align: center">H</td>
+                        <td height="30px"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">8</td>
+                        <td id="square18" data-x="1" data-y="8" class="chess-square" style="background-color: beige;"><img data-color="black" data-piece="rook" id="WhiteRook1" src="images/black-rook-t.gif" title="Rook"></td>
+                        <td id="square28" data-x="2" data-y="8" class="chess-square" style="background-color: burlywood;"><img data-color="black" data-piece="knight" src="images/black-knight-t.gif" title="Knight"></td>
+                        <td id="square38" data-x="3" data-y="8" class="chess-square" style="background-color: beige;"><img data-color="black" data-piece="bishop" src="images/black-bishop-t.gif" title="Bishop"></td>
+                        <td id="square48" data-x="4" data-y="8" class="chess-square" style="background-color: burlywood;"><img data-color="black" data-piece="queen" src="images/black-queen-t.gif" title="Queen"></td>
+                        <td id="square58" data-x="5" data-y="8" class="chess-square" style="background-color: beige;"><img data-color="black" data-piece="king" src="images/black-king-t.gif" title="King"></td>
+                        <td id="square68" data-x="6" data-y="8" class="chess-square" style="background-color: burlywood;"><img data-color="black" data-piece="bishop" src="images/black-bishop-t.gif" title="Bishop"></td>
+                        <td id="square78" data-x="7" data-y="8" class="chess-square" style="background-color: beige;"><img data-color="black" data-piece="knight" src="images/black-knight-t.gif" title="Knight"></td>
+                        <td id="square88" data-x="8" data-y="8" class="chess-square" style="background-color: burlywood;"><img data-color="black" data-piece="rook" src="images/black-rook-t.gif" title="Rook"></td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">7</td>
+                        <td id="square17" data-x="1" data-y="7" class="chess-square" style="background-color: burlywood;"><img data-color="black" data-piece="pawn" src="images/black-pawn-t.gif" title="Pawn"></td>
+                        <td id="square27" data-x="2" data-y="7" class="chess-square" style="background-color: beige;"><img data-color="black" data-piece="pawn" src="images/black-pawn-t.gif" title="Pawn"></td>
+                        <td id="square37" data-x="3" data-y="7" class="chess-square" style="background-color: burlywood;"><img data-color="black" data-piece="pawn" src="images/black-pawn-t.gif" title="Pawn"></td>
+                        <td id="square47" data-x="4" data-y="7" class="chess-square" style="background-color: beige;"><img data-color="black" data-piece="pawn" src="images/black-pawn-t.gif" title="Pawn"></td>
+                        <td id="square57" data-x="5" data-y="7" class="chess-square" style="background-color: burlywood;"><img data-color="black" data-piece="pawn" src="images/black-pawn-t.gif" title="Pawn"></td>
+                        <td id="square67" data-x="6" data-y="7" class="chess-square" style="background-color: beige;"><img data-color="black" data-piece="pawn" src="images/black-pawn-t.gif" title="Pawn"></td>
+                        <td id="square77" data-x="7" data-y="7" class="chess-square" style="background-color: burlywood;"><img data-color="black" data-piece="pawn" src="images/black-pawn-t.gif" title="Pawn"></td>
+                        <td id="square87" data-x="8" data-y="7" class="chess-square" style="background-color: beige;"><img data-color="black" data-piece="pawn" src="images/black-pawn-t.gif" title="Pawn"></td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">6</td>
+                        <td id="square16" data-x="1" data-y="6" class="chess-square" style="background-color: beige;"></td>
+                        <td id="square26" data-x="2" data-y="6" class="chess-square" style="background-color: burlywood;"></td>
+                        <td id="square36" data-x="3" data-y="6" class="chess-square" style="background-color: beige;"></td>
+                        <td id="square46" data-x="4" data-y="6" class="chess-square" style="background-color: burlywood;"></td>
+                        <td id="square56" data-x="5" data-y="6" class="chess-square" style="background-color: beige;"></td>
+                        <td id="square66" data-x="6" data-y="6" class="chess-square" style="background-color: burlywood;"></td>
+                        <td id="square76" data-x="7" data-y="6" class="chess-square" style="background-color: beige;"></td>
+                        <td id="square86" data-x="8" data-y="6" class="chess-square" style="background-color: burlywood;"></td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">5</td>
+                        <td id="square15" data-x="1" data-y="5" class="chess-square" style="background-color: burlywood;"></td>
+                        <td id="square25" data-x="2" data-y="5" class="chess-square" style="background-color: beige;"></td>
+                        <td id="square35" data-x="3" data-y="5" class="chess-square" style="background-color: burlywood;"></td>
+                        <td id="square45" data-x="4" data-y="5" class="chess-square" style="background-color: beige;"></td>
+                        <td id="square55" data-x="5" data-y="5" class="chess-square" style="background-color: burlywood;"></td>
+                        <td id="square65" data-x="6" data-y="5" class="chess-square" style="background-color: beige;"></td>
+                        <td id="square75" data-x="7" data-y="5" class="chess-square" style="background-color: burlywood;"></td>
+                        <td id="square85" data-x="8" data-y="5" class="chess-square" style="background-color: beige;"></td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">4</td>
+                        <td id="square14" data-x="1" data-y="4" class="chess-square" style="background-color: beige;"></td>
+                        <td id="square24" data-x="2" data-y="4" class="chess-square" style="background-color: burlywood;"></td>
+                        <td id="square34" data-x="3" data-y="4" class="chess-square" style="background-color: beige;"></td>
+                        <td id="square44" data-x="4" data-y="4" class="chess-square" style="background-color: burlywood;"></td>
+                        <td id="square54" data-x="5" data-y="4" class="chess-square" style="background-color: beige;"></td>
+                        <td id="square64" data-x="6" data-y="4" class="chess-square" style="background-color: burlywood;"></td>
+                        <td id="square74" data-x="7" data-y="4" class="chess-square" style="background-color: beige;"></td>
+                        <td id="square84" data-x="8" data-y="4" class="chess-square" style="background-color: burlywood;"></td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">3</td>
+                        <td id="square13" data-x="1" data-y="3" class="chess-square" style="background-color: burlywood;"></td>
+                        <td id="square23" data-x="2" data-y="3" class="chess-square" style="background-color: beige;"></td>
+                        <td id="square33" data-x="3" data-y="3" class="chess-square" style="background-color: burlywood;"></td>
+                        <td id="square43" data-x="4" data-y="3" class="chess-square" style="background-color: beige;"></td>
+                        <td id="square53" data-x="5" data-y="3" class="chess-square" style="background-color: burlywood;"></td>
+                        <td id="square63" data-x="6" data-y="3" class="chess-square" style="background-color: beige;"></td>
+                        <td id="square73" data-x="7" data-y="3" class="chess-square" style="background-color: burlywood;"></td>
+                        <td id="square83" data-x="8" data-y="3" class="chess-square" style="background-color: beige;"></td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">2</td>
+                        <td id="square12" data-x="1" data-y="2" class="chess-square" style="background-color: beige;"><img data-color="white" data-piece="pawn" src="images/white-pawn-t.gif" title="Pawn"></td>
+                        <td id="square22" data-x="2" data-y="2" class="chess-square" style="background-color: burlywood;"><img data-color="white" data-piece="pawn" src="images/white-pawn-t.gif" title="Pawn"></td>
+                        <td id="square32" data-x="3" data-y="2" class="chess-square" style="background-color: beige;"><img data-color="white" data-piece="pawn" src="images/white-pawn-t.gif" title="Pawn"></td>
+                        <td id="square42" data-x="4" data-y="2" class="chess-square" style="background-color: burlywood;"><img data-color="white" data-piece="pawn" src="images/white-pawn-t.gif" title="Pawn"></td>
+                        <td id="square52" data-x="5" data-y="2" class="chess-square" style="background-color: beige;"><img data-color="white" data-piece="pawn" src="images/white-pawn-t.gif" title="Pawn"></td>
+                        <td id="square62" data-x="6" data-y="2" class="chess-square" style="background-color: burlywood;"><img data-color="white" data-piece="pawn" src="images/white-pawn-t.gif" title="Pawn"></td>
+                        <td id="square72" data-x="7" data-y="2" class="chess-square" style="background-color: beige;"><img data-color="white" data-piece="pawn" src="images/white-pawn-t.gif" title="Pawn"></td>
+                        <td id="square82" data-x="8" data-y="2" class="chess-square" style="background-color: burlywood;"><img data-color="white" data-piece="pawn" src="images/white-pawn-t.gif" title="Pawn"></td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">1
+
+                        </td>
+                        <td id="square11" data-x="1" data-y="1" class="chess-square" style="background-color: burlywood;"><img data-color="white" data-piece="rook" src="images/white-rook-t.gif" title="Rook"></td>
+                        <td id="square21" data-x="2" data-y="1" class="chess-square" style="background-color: beige;"><img data-color="white" data-piece="knight" src="images/white-knight-t.gif" title="Knight"></td>
+                        <td id="square31" data-x="3" data-y="1" class="chess-square" style="background-color: burlywood;"><img data-color="white" data-piece="bishop" src="images/white-bishop-t.gif" title="Bishop"></td>
+                        <td id="square41" data-x="4" data-y="1" class="chess-square" style="background-color: beige;"><img data-color="white" data-piece="queen" src="images/white-queen-t.gif" title="Queen"></td>
+                        <td id="square51" data-x="5" data-y="1" class="chess-square" style="background-color: burlywood;"><img data-color="white" data-piece="king" src="images/white-king-t.gif" title="King"></td>
+                        <td id="square61" data-x="6" data-y="1" class="chess-square" style="background-color: beige;"><img data-color="white" data-piece="bishop" src="images/white-bishop-t.gif" title="Bishop"></td>
+                        <td id="square71" data-x="7" data-y="1" class="chess-square" style="background-color: burlywood;"><img data-color="white" data-piece="knight" src="images/white-knight-t.gif" title="Knight"></td>
+                        <td id="square81" data-x="8" data-y="1" class="chess-square" style="background-color: beige;"><img data-color="white" data-piece="rook" src="images/white-rook-t.gif" title="Rook"></td>
+                        <td>1</td>
+                    </tr>
+                    <tr  height="30px">
+                        <td height="30px"></td>
+                        <td height="30px" style="text-align: center">A</td>
+                        <td height="30px" style="text-align: center">B</td>
+                        <td height="30px" style="text-align: center">C</td>
+                        <td height="30px" style="text-align: center">D</td>
+                        <td height="30px" style="text-align: center">E</td>
+                        <td height="30px" style="text-align: center">F</td>
+                        <td height="30px" style="text-align: center">G</td>
+                        <td height="30px" style="text-align: center">H</td>
+                        <td height="30px"></td>
+                    </tr>
+                </table>
+            </td>
+            <td class="chess-square" id="blackPiecesTaken"></td>
+        </tr>
+    </table>
+    <div id="message">Message</div>
+</body>
+</html>

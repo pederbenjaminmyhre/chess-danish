@@ -1,0 +1,24 @@
+#taken-pieces {
+    border: 1px solid black;
+    width: 200px;
+    height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+}
+
+#taken-pieces img {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+
+.chess-square {
+    width: 75px;
+    height: 75px;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    background-color: lightgray;
+}
