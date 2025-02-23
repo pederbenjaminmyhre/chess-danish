@@ -1,6 +1,7 @@
 import { RulesForPawns } from "./Rules/RulesForPawns";
 import { RulesForRooks } from "./Rules/RulesForRooks";
 import { RulesForKnights } from "./Rules/RulesForKnights";
+import { RulesForBishops } from "./Rules/RulesForBishops";
 
 export class TableImageDragDrop {
 
@@ -11,6 +12,8 @@ export class TableImageDragDrop {
     private rulesForPawns: RulesForPawns | null = null;
     private rulesForRooks: RulesForRooks | null = null;
     private rulesForKnights: RulesForKnights | null = null;
+    private rulesForBishops: RulesForBishops | null = null;
+
     private tableIndex: (HTMLElement | null)[][] | null = null;
 
     // Prepare the chessboard
@@ -22,8 +25,10 @@ export class TableImageDragDrop {
         this.rulesForPawns = new RulesForPawns();
         this.rulesForRooks = new RulesForRooks();
         this.rulesForKnights = new RulesForKnights();
+        this.rulesForBishops = new RulesForBishops();
         this.init();
-    }
+    }    
+
 
     private indexTable() {
         this.tableIndex = Array.from({ length: 10 }, () => Array(10).fill(null));
@@ -110,17 +115,16 @@ export class TableImageDragDrop {
             case "rook":
                 if(this.rulesForRooks && this.startSquare && this.draggedPiece){
                     moveIsAllowed = this.rulesForRooks.moveIsAllowed(this.tableIndex, this.startSquare, this.draggedPiece, targetSquare, targetPiece);
-                    console.log("case rook");
-                    console.log(moveIsAllowed);
                 }
                 break;
             case "knight":
-                console.log("case");
-                console.log(this.rulesForKnights);
-                console.log(this.startSquare);
-                console.log(this.draggedPiece);
                 if(this.rulesForKnights && this.startSquare && this.draggedPiece ){
                     moveIsAllowed = this.rulesForKnights.moveIsAllowed(this.tableIndex, this.startSquare, this.draggedPiece, targetSquare, targetPiece);
+                }
+                break;
+            case "bishop":
+                if(this.rulesForBishops && this.startSquare && this.draggedPiece ){
+                    moveIsAllowed = this.rulesForBishops.moveIsAllowed(this.tableIndex, this.startSquare, this.draggedPiece, targetSquare, targetPiece);
                 }
                 break;
         }
