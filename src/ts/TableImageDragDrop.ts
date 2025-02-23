@@ -1,5 +1,6 @@
 import { RulesForPawns } from "./Rules/RulesForPawns";
-import { RulesForRooks } from "./Rules/RulesForRooks"
+import { RulesForRooks } from "./Rules/RulesForRooks";
+import { RulesForKnights } from "./Rules/RulesForKnights";
 
 export class TableImageDragDrop {
 
@@ -9,6 +10,7 @@ export class TableImageDragDrop {
     private startSquare: HTMLElement | null = null;
     private rulesForPawns: RulesForPawns | null = null;
     private rulesForRooks: RulesForRooks | null = null;
+    private rulesForKnights: RulesForKnights | null = null;
     private tableIndex: (HTMLElement | null)[][] | null = null;
 
     // Prepare the chessboard
@@ -19,6 +21,7 @@ export class TableImageDragDrop {
         this.indexTable();
         this.rulesForPawns = new RulesForPawns();
         this.rulesForRooks = new RulesForRooks();
+        this.rulesForKnights = new RulesForKnights();
         this.init();
     }
 
@@ -109,6 +112,15 @@ export class TableImageDragDrop {
                     moveIsAllowed = this.rulesForRooks.moveIsAllowed(this.tableIndex, this.startSquare, this.draggedPiece, targetSquare, targetPiece);
                     console.log("case rook");
                     console.log(moveIsAllowed);
+                }
+                break;
+            case "knight":
+                console.log("case");
+                console.log(this.rulesForKnights);
+                console.log(this.startSquare);
+                console.log(this.draggedPiece);
+                if(this.rulesForKnights && this.startSquare && this.draggedPiece ){
+                    moveIsAllowed = this.rulesForKnights.moveIsAllowed(this.tableIndex, this.startSquare, this.draggedPiece, targetSquare, targetPiece);
                 }
                 break;
         }
